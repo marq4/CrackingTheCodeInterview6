@@ -9,7 +9,7 @@
  *   If that is 0 then both numbers must have been composed of the same digts. 
  * Instead we can also substract each pair of digits at the same position in each big number and add all up: 
  *   (0 - 2) + (1 - 1) + (2 - 0) = 0. 
- *   "da...e" "da...f" => (3 - 3) + (0 - 0) + ... + (4 - 5) = 1. 
+ *   "da...e" "da...f" => (3 - 3) + (0 - 0) + ... + (4 - 5) = -1. 
 */
 
 class Permutation {
@@ -17,7 +17,7 @@ class Permutation {
                 String f = first.replaceAll("\\s", "");
                 String s = second.replaceAll("\\s", "");
 
-		if (f.length() != s.length()) return false; 
+		if (f.length() != s.length() ) return false; 
 
 		int sum = 0;
 		for (int q = 0; q < f.length(); q++) 
