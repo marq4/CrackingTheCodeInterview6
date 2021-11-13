@@ -17,24 +17,24 @@
 import java.lang.Math;
 
 class OneAway {
-        static boolean oneAway(String first, String second) {
-                String f = ( first.toLowerCase().replaceAll("[^a-z]", "") );
-                String s = ( second.toLowerCase().replaceAll("[^a-z]", "") );
+        static boolean oneAway(String First, String Second) {
+                String F = ( First.toLowerCase().replaceAll("[^a-z]", "") );
+                String S = ( Second.toLowerCase().replaceAll("[^a-z]", "") );
 
-                if ( f.equals(s) ) return true;
+                if ( F.equals(S) ) return true;
 
-                int dif = ( f.length() - s.length() );
+                int dif = ( F.length() - S.length() );
                 if (Math.abs(dif) > 1) return false;
 
                 int[] H = new int[26];
                 int sum = 0;
                 int q;
 
-                for (q = 0; q < f.length(); q++)
-                        H[ (f.charAt(q) - 'a') ]++;
+                for (q = 0; q < F.length(); q++)
+                        H[ (F.charAt(q) - 'a') ]++;
 
-                for (q = 0; q < s.length(); q++)
-                        H[ (s.charAt(q) - 'a') ]--;
+                for (q = 0; q < S.length(); q++)
+                        H[ (S.charAt(q) - 'a') ]--;
 
                 for (int h : H)
                         sum += Math.abs(h);

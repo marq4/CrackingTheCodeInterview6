@@ -13,15 +13,15 @@
 */
 
 class Permutation {
-	static boolean isPermutation(String first, String second) {
-                String f = first.replaceAll("\\s", "");
-                String s = second.replaceAll("\\s", "");
+	static boolean isPermutation(String First, String Second) {
+                String F = First.replaceAll("\\s", "");
+                String S = Second.replaceAll("\\s", "");
 
-		if (f.length() != s.length() ) return false; 
+		if (F.length() != S.length() ) return false; 
 
 		int sum = 0;
-		for (int q = 0; q < f.length(); q++) 
-			sum += ( f.charAt(q) - s.charAt(q) ); 
+		for (int q = 0; q < F.length(); q++) 
+			sum += ( F.charAt(q) - S.charAt(q) ); 
 
 		return (sum == 0); 
 	}

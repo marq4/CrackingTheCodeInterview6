@@ -28,24 +28,24 @@ class URLIfy {
 
 	// Java syntax showcase: 
         private static class TestCase {
-                private String str;
+                private String Str;
                 private int size;
                 TestCase() {
                         this.setStr("");
                         this.setSize(0);
                 }
-                TestCase(String newStr, int newSize) {
-                        this.setStr(newStr);
+                TestCase(String NewStr, int newSize) {
+                        this.setStr(NewStr);
                         this.setSize(newSize);
                 }
-                TestCase(String realStr, String sizeStr) {
-			this(realStr, Integer.parseInt(sizeStr) );
+                TestCase(String realStr, String SizeStr) {
+			this(realStr, Integer.parseInt(SizeStr) );
                 }
-                void setStr(String s) {
-                        this.str = s;
+                void setStr(String S) {
+                        this.Str = S;
                 }
                 String getStr() {
-                        return this.str;
+                        return this.Str;
                 }
                 void setSize(int z) {
 			if (z < 0) throw new IllegalArgumentException("Size Can't be negative");
@@ -63,11 +63,11 @@ class URLIfy {
         }
 
         public static void main(String Args[]) {
-                TestCase tc = new TestCase(Args[0], Args[1]);
-                System.out.println(tc);
-                char[] ReplaceMe = tc.getStrAsCharArray();
+                TestCase Tc = new TestCase(Args[0], Args[1]);
+                System.out.println(Tc);
+                char[] ReplaceMe = Tc.getStrAsCharArray();
                 System.out.println("Before: " + Arrays.toString(ReplaceMe) );
-                urlIfy(ReplaceMe, tc.getSize());
+                urlIfy(ReplaceMe, Tc.getSize());
                 System.out.println("After:  " + Arrays.toString(ReplaceMe) );
         }
 }

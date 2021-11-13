@@ -16,15 +16,15 @@
  */
 
 class PalindromePermutation {
-	static boolean isPP(String str) {
+	static boolean isPP(String Str) {
 		byte LIM = 26; // Assume only a-z valid. 
 		byte single = 0;
 		boolean[] B = new boolean[LIM];
-		String s = ( (str.toLowerCase()).replaceAll("[^a-z]", "") );
+		String S = ( (Str.toLowerCase()).replaceAll("[^a-z]", "") );
 
 		byte val;
-		for (short q = 0; q < s.length(); q++) {
-			val = (byte) (s.charAt(q) - 'a');
+		for (short q = 0; q < S.length(); q++) {
+			val = (byte) (S.charAt(q) - 'a');
 			if (B[val]) single--;
 			else single++;
 			B[val] = !(B[val]);
