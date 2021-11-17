@@ -2,7 +2,7 @@
  * Run with -ea 
  * As the book suggests we should see a matrix as 2 rows and 2 columns 
  *   with something inside; either a dot, a single element, or a smaller matrix. 
- * Let's begin with the base case scenario, n=2: 
+ * Let's begin with the base scenario, n=2: 
  * M = 	[1, 2]
  * 	[3, 4] 	
  * Let's assign names to each row pointer and column pointer. Top = 1, Right = 2, Left = 3, Bottom = 4. 
@@ -50,12 +50,10 @@ class MatrixRotation {
                 a = 0;
                 for (f = 0; f < z; f++, System.out.println()) {
                         for (g = 0; g < z; g++) {
-                                if (++a > 12)
-                                        System.out.print( S[f][g] + "     " );
-                                else if (a > 9)
+                                if (++a > 9)
                                         System.out.print( S[f][g] + "     " );
                                 else
-                                System.out.print( S[f][g] + "      " );
+                                	System.out.print( S[f][g] + "      " );
                         }
                 }
 
