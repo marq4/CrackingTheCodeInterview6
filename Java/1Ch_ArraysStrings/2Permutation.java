@@ -27,6 +27,7 @@ class Permutation {
 	}
 
 	public static void main(String Args[]) {
+		if (Args == null || Args.length != 2) return; 
 		System.out.println("Is permutation?   " + Args[0] + "   " + Args[1] + "   =>" + isPermutation(Args[0], Args[1]) ); 
 	}
 }
