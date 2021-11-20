@@ -45,6 +45,7 @@ class OneAway {
         }
 
         public static void main(String Args[]) {
+		if (Args == null || Args.length != 2) return; 
                 System.out.println("oneAway?   " + oneAway(Args[0], Args[1]) );
         }
 }
