@@ -27,10 +27,10 @@ class ZeroMatrixTip {
                 for (row = 0; row < m; row++)
                         for (col = 0; col < n; col++)
                                 if (Matrix[row][col] == 0) {
-                                        if (row == 0) todo0Top = true;
+                                        if (row == 0) todo0Top = true; 
+					else Matrix[0][col] = 0; 
                                         if (col == 0) todo0Left = true;
-                                        Matrix[0][col] = 0;
-                                        Matrix[row][0] = 0;
+					else Matrix[row][0] = 0; 
                                 }
                 //  Overwrite with 0s EXCEPT TOP ROW AND FIRST COL:
                 for (col = 1; col < n; col++)
@@ -82,7 +82,7 @@ class ZeroMatrixTip {
                 assert zeroRow < m && zeroCol < n: "Matrix has to be bigger. " +
                         "Setting 0 at (" + String.valueOf(zeroRow) + ", " + String.valueOf(zeroCol) + "). ";
                 TestCase[zeroRow][zeroCol] = 0;
-        //      TestCase[m-1][n-1] = 0;
+             	//TestCase[m-1][n-1] = 0;
                 System.out.println("Matrix => ");
                 showMatrix(TestCase);
                 zeroRC(TestCase);
