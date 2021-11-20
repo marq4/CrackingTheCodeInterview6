@@ -29,10 +29,11 @@ class PalindromePermutation {
 			else single++;
 			B[val] = !(B[val]);
 		}
-		return (! (single > 1) ); 
+		return (single < 2); 
 	}
 
 	public static void main(String Args[]) {
+		if (Args == null || Args.length != 1) return; 
 		System.out.println("isPP: " + Args[0] + " ==> " + isPP(Args[0]) );
 	}
 }
