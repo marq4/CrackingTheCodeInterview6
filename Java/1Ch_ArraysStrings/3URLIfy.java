@@ -1,4 +1,5 @@
 /*
+ * Run with -ea when testing different cases to avoid weird errors in case of wrong input. 
  * Input: ["Mr John Smith    ", 13]. Output: ["Mr%20John%20Smith"]. 
  * There are 2 relevant lengths: The total (var t) length of the string with all spaces, and the size (length of string with inner spaces). 
  * We can begin scanning the string from the relevant end ('h') (var q) in reverse. 
@@ -62,13 +63,40 @@ class URLIfy {
                 }
         }
 
+	private static boolean inputValid(String Text, String RealSize) {
+		if (Text == null || RealSize == null) return false; 
+		int size = Integer.parseInt(RealSize); 
+		if (size < 0) return false; 
+		int innerSpaces = 0, trailingSpaces = 0, nonSpaceChars = 0; 
+		// Count non-spaces and inner spaces:  
+		for (int q = 0; q < size; q++) {
+			if (Text.charAt(q) == ' ') innerSpaces++; 
+			else nonSpaceChars++; 
+		}
+		assert (size == nonSpaceChars + innerSpaces); // Should always be true. 
+		// Only trailing spaces should follow: 
+		for (int q = innerSpaces + nonSpaceChars; q < Text.length(); q++) {
+			if (Text.charAt(q) != ' ') return false; 
+			else trailingSpaces++; 
+		}
+		// Now the real tests, make sure the specified size is correct and enough trailing spaces were given: 
+		if (Text.length() != nonSpaceChars + innerSpaces + trailingSpaces) return false; 
+		if (innerSpaces * 2 != trailingSpaces) return false;
+		return true; 
+	}
+
         public static void main(String Args[]) {
+		if (Args == null || Args.length != 2) return; 
+		assert inputValid(Args[0], Args[1]): 
+			"Please verify that number ('true' length of string). Also the trailing spaces must be exact. "; 
                 TestCase Tc = new TestCase(Args[0], Args[1]);
                 System.out.println(Tc);
                 char[] ReplaceMe = Tc.getStrAsCharArray();
                 System.out.println("Before: " + Arrays.toString(ReplaceMe) );
                 urlIfy(ReplaceMe, Tc.getSize());
                 System.out.println("After:  " + Arrays.toString(ReplaceMe) );
+		// Verify no spaces left: 
+		for (int q = 0; q < ReplaceMe.length; q++) assert ReplaceMe[q] != ' ' : "A space remains!";  
         }
 }
 
