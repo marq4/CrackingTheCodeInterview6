@@ -90,18 +90,15 @@ class SLLKth2Last {
 		return Waiter; 
 	}
 
-	static boolean inputValid4Recurs(SimplyLinkedList GetMySize, int k) {
+	private static boolean inputValid4Recurs(SimplyLinkedList GetMySize, int k) {
 		if ( GetMySize.isEmpty() || k < 0) return false; 
 		int len = 0; 
-		if ( ! GetMySize.isEmpty() ) {
-			SimplyLinkedList.Node Trav = GetMySize.Head; 
-			while (Trav.Next != null) { 
-				len++; 
-				Trav = Trav.Next; 
-			}
-			len++;
+		SimplyLinkedList.Node Trav = GetMySize.Head; 
+		while (Trav.Next != null) { 
+			len++; 
+			Trav = Trav.Next; 
 		}
-		return (k >= len); 
+		return (++len > k); 
 	}
 
 	public static void main(String[] Args) {
@@ -114,7 +111,7 @@ class SLLKth2Last {
 		System.out.println(TestCase); 
 		int resultBF = (kth2LastTwice(TestCase, kValue)).data; 
 		int resultHash = kth2LastHash(TestCase, kValue); 
-		assert !( inputValid4Recurs(TestCase, kValue) ): 
+		assert inputValid4Recurs(TestCase, kValue): 
 			"Value k can't be greater than list length -1 for recursive method. "; 
 		int resultRecurs = (kth2LastRecurs(TestCase.Head, kValue)).data; 
 		int resultPointers = (kth2Last2Pointers(TestCase, kValue)).data; 
