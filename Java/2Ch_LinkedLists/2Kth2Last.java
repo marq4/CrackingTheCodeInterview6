@@ -16,9 +16,9 @@ class SLLKth2Last {
 	private static short index = -1; 
 
 	//BAD CODE: 
-	static SimplyLinkedList.Node kth2LastTwice(SimplyLinkedList SLL, int k) {
+	static SinglyLinkedList.Node kth2LastTwice(SinglyLinkedList SLL, int k) {
 		if (SLL == null) return null; 
-		SimplyLinkedList.Node Trav = SLL.Head; 
+		SinglyLinkedList.Node Trav = SLL.Head; 
 		// Get list length: 
 		int len; 
 		for (len = 0; Trav != null; len++) Trav = Trav.Next; 
@@ -30,9 +30,9 @@ class SLLKth2Last {
 	}
 
 	//Extra space: 
-	static int kth2LastHash(SimplyLinkedList SLL, int k) throws IllegalArgumentException {
+	static int kth2LastHash(SinglyLinkedList SLL, int k) throws IllegalArgumentException {
 		if ( SLL == null || SLL.isEmpty() ) throw new IllegalArgumentException("List is empty. "); 
-		SimplyLinkedList.Node Trav = SLL.Head; 
+		SinglyLinkedList.Node Trav = SLL.Head; 
 		int len; 
 		HashMap<Integer, Integer> Hash = new HashMap<Integer, Integer>(); 
 		for (len = 0; Trav != null; len++, Trav = Trav.Next) Hash.put(len, Trav.data); 
@@ -62,9 +62,9 @@ class SLLKth2Last {
 	 * return *20. 
 	 */
 	//BAD CODE: 
-	static SimplyLinkedList.Node kth2LastRecurs(SimplyLinkedList.Node Head, int k) {
+	static SinglyLinkedList.Node kth2LastRecurs(SinglyLinkedList.Node Head, int k) {
 		if (Head == null) return null; 
-		SimplyLinkedList.Node Diver = kth2LastRecurs(Head.Next, k); 
+		SinglyLinkedList.Node Diver = kth2LastRecurs(Head.Next, k); 
 		assert index > -2: "Var index has overflown. "; 
 		if (++index == k) return Head; 
 		return Diver; 
@@ -76,9 +76,9 @@ class SLLKth2Last {
 	 * When Runner's next gets to null, Waiter is kth to last node. 
 	 */
 	//Best:
-	static SimplyLinkedList.Node kth2Last2Pointers(SimplyLinkedList SLL, int k) {
+	static SinglyLinkedList.Node kth2Last2Pointers(SinglyLinkedList SLL, int k) {
 		if ( SLL == null || SLL.isEmpty() ) return null; 
-		SimplyLinkedList.Node Runner, Waiter; 
+		SinglyLinkedList.Node Runner, Waiter; 
 		int len = 0; 
 		Runner = SLL.Head; Waiter = SLL.Head; 
 		while (Runner.Next != null) {
@@ -90,10 +90,10 @@ class SLLKth2Last {
 		return Waiter; 
 	}
 
-	private static boolean inputValid4Recurs(SimplyLinkedList GetMySize, int k) {
+	private static boolean inputValid4Recurs(SinglyLinkedList GetMySize, int k) {
 		if ( GetMySize.isEmpty() || k < 0) return false; 
 		int len = 0; 
-		SimplyLinkedList.Node Trav = GetMySize.Head; 
+		SinglyLinkedList.Node Trav = GetMySize.Head; 
 		while (Trav.Next != null) { 
 			len++; 
 			Trav = Trav.Next; 
@@ -105,7 +105,7 @@ class SLLKth2Last {
 		if (Args == null || Args.length != 1) return; 
 		int kValue = Integer.parseInt(Args[0]); 
 		if (kValue < 0) return; 
-		SimplyLinkedList TestCase = new SimplyLinkedList(); 
+		SinglyLinkedList TestCase = new SinglyLinkedList(); 
 		for (byte a = 10; a < 14; a++) TestCase.add(a); 
 		assert !( TestCase.isEmpty() ): "SLL should not be empty. "; 
 		System.out.println(TestCase); 

@@ -1,5 +1,5 @@
 /*
- * Remove duplicates of an <int> Simply Linked List. 
+ * Remove duplicates of an <int> Singly Linked List. 
  * Node Curr begins at the head of the list until we reach the end of the list (null). 
  * Node Runner is what we use to compare with Curr to find duplicates. 
  * Node Prev is needed to connect the first half list to the remainer of the list after 
@@ -13,8 +13,8 @@
  */
 
 class SLLRemoveDups {
-	static void removeDups(SimplyLinkedList SLL) {
-		SimplyLinkedList.Node Curr, Runner, Prev; 
+	static void removeDups(SinglyLinkedList SLL) {
+		SinglyLinkedList.Node Curr, Runner, Prev; 
 		Curr = SLL.Head; 
 		while (Curr != null) {
 			Prev = Curr; 
@@ -35,7 +35,7 @@ class SLLRemoveDups {
 
 	public static void main(String[] Args) {
 		if (Args == null || Args.length < 1) return; 
-		SimplyLinkedList TestCase = new SimplyLinkedList(); 
+		SinglyLinkedList TestCase = new SinglyLinkedList(); 
 		for (int a = 0; a < Args.length; a++) TestCase.add( Integer.parseInt(Args[a]) ); 
 		System.out.println("Before: " + TestCase); 
 		removeDups(TestCase); 

@@ -1,12 +1,12 @@
 
-class SimplyLinkedList {
+class SinglyLinkedList {
 	Node Head;
 
-	SimplyLinkedList() {
+	SinglyLinkedList() {
 		this.Head = null; 
 	}
 
-	SimplyLinkedList(int firstData) {
+	SinglyLinkedList(int firstData) {
 		this.Head = new Node(firstData); 
 	}
 
