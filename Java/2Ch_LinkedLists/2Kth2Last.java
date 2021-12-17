@@ -115,9 +115,11 @@ class SLLKth2Last {
 			"Value k can't be greater than list length -1 for recursive method. "; 
 		int resultRecurs = (kth2LastRecurs(TestCase.Head, kValue)).data; 
 		int resultPointers = (kth2Last2Pointers(TestCase, kValue)).data; 
-		assert resultBF == resultHash && resultBF == resultRecurs && resultBF == resultPointers; //java -ea 
+		assert resultBF == resultHash && resultBF == resultRecurs && resultBF == resultPointers; 
 		System.out.println("Value kth to last: " + String.valueOf(resultPointers) ); 
 	}
+	/* Run: -ea SLLKth2Last, ^^ Args: {int} value kth-from-last in list to retrieve. */
+
 }
 
 
