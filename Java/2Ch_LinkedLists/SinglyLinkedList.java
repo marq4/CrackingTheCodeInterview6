@@ -30,25 +30,24 @@ class SinglyLinkedList {
 		Node Next; 
 		int data;  
 
-		Node(int firstData) {
+		private Node(int newData) {
 			this.Next = null; 
-			this.data = firstData; 
+			this.data = newData; 
 		}
 
+		@Override 
 		public String toString() {
-			return "[SLLNode] ?->(" + String.valueOf(this.data) + ")->?"; 
+			return "[SLLNode]: ?->(" + String.valueOf(this.data) + ")->?"; 
 		}
 	}
 
+	@Override 
 	public String toString() {
-		Node Trav = Head; 
-		String Repr = "SLL => "; 
-		while (Trav != null) {
+		String Repr = "{Singly Linked List (int) => "; 
+		for (Node Trav = Head; Trav != null; Trav = Trav.Next) 
 			Repr += "(" + String.valueOf(Trav.data) + ")->"; 
-			Trav = Trav.Next; 
-		}
-		Repr += "|| ";
-		return Repr; 
+		return Repr + "|| } "; 
 	}
+
 }
 

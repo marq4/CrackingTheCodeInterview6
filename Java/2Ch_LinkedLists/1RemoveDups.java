@@ -41,5 +41,7 @@ class SLLRemoveDups {
 		removeDups(TestCase); 
 		System.out.println("After:  " + TestCase); 
 	}
+	/* Run: SLLRemoveDups, ^^ Args: {int}s list of numbers to add to SLL. Expected result: removed duplicates. */
+
 }
 
