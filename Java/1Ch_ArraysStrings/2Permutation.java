@@ -12,7 +12,7 @@
  *   "da...e" "da...f" => (3 - 3) + (0 - 0) + ... + (4 - 5) = -1. 
 */
 
-class Permutation {
+final class Permutation {
 	static boolean isPermutation(String First, String Second) {
                 String F = First.replaceAll("\\s", "");
                 String S = Second.replaceAll("\\s", "");

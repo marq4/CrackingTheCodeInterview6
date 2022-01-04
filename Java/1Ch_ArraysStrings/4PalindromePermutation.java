@@ -15,7 +15,7 @@
  * If single is > 1 that means we saw a bunch of single letters. 
  */
 
-class PalindromePermutation {
+final class PalindromePermutation {
 	static boolean isPP(String Str) {
 		byte LIM = 26; // Assume only a-z valid. 
 		byte single = 0;

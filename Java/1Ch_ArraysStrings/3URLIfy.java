@@ -12,7 +12,7 @@
 
 import java.util.Arrays;
 
-class URLIfy {
+final class URLIfy {
 	// ' ' => '%20': 
 	static void urlIfy(char[] A, int size) {
 		int t = A.length-1;
@@ -58,6 +58,7 @@ class URLIfy {
                 char[] getStrAsCharArray() {
                         return this.getStr().toCharArray();
                 }
+		@Override 
                 public String toString() {
                         return "TestCase: [\"" + this.getStr() + "\", " + this.getSize() + "] ";
                 }

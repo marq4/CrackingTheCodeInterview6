@@ -11,7 +11,7 @@
 
 import java.util.Arrays;
 
-class ZeroMatrixTip {
+final class ZeroMatrixTip {
         static void zeroRC(int[][] Matrix) {
                 if (Matrix == null || Matrix.length < 1 || Matrix[0] == null || Matrix[0].length < 1) return;
 

@@ -11,7 +11,7 @@ import java.util.HashMap;
  * 	EXCEPT for recursive where k has to be correct. 
  */
 
-class SLLKth2Last {
+final class SLLKth2Last {
 	// If we need more than 32k calls we're doing something wrong: 
 	private static short index = -1; 
 

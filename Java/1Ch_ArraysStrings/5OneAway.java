@@ -16,7 +16,7 @@
 
 import java.lang.Math;
 
-class OneAway {
+final class OneAway {
         static boolean oneAway(String First, String Second) {
                 String F = ( First.toLowerCase().replaceAll("[^a-z]", "") );
                 String S = ( Second.toLowerCase().replaceAll("[^a-z]", "") );

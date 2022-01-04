@@ -12,7 +12,7 @@
  * 	otherwise just continue searching. 
  */
 
-class SLLRemoveDups {
+final class SLLRemoveDups {
 	static void removeDups(SinglyLinkedList SLL) {
 		SinglyLinkedList.Node Curr, Runner, Prev; 
 		Curr = SLL.Head; 

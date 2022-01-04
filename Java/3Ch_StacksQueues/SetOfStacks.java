@@ -11,13 +11,13 @@ import java.util.EmptyStackException;
  * 	Var top points to the most recent plate stacked (-1 table or floor [no plate], 0 bottom plate). 
  */
 
-class SetOfStacks {
+public class SetOfStacks {
 	private final ArrayList<int[]> Stax;
 	private int threshold; 
 	private int currentStack; 
 	private int top; 
 
-	SetOfStacks(int finalThreshold) throws IllegalArgumentException {
+	public SetOfStacks(int finalThreshold) throws IllegalArgumentException {
 		if (finalThreshold < 1) throw new IllegalArgumentException("Threshold must be greater than 0. "); 
 		this.threshold = finalThreshold; 
 		this.currentStack = -1; 
@@ -25,7 +25,7 @@ class SetOfStacks {
 		this.top = -1; 
 	}
 
-	boolean isEmpty() {
+	public boolean isEmpty() {
 		return (this.currentStack == -1); 
 	}
 
@@ -33,7 +33,7 @@ class SetOfStacks {
 	 * If there are no piles or the last pile is already wobbling, start a new pile. 
 	 * Place the plate at the top of the most recent pile. 
 	 */
-	void push(int newValue) {
+	public void push(int newValue) {
 		if (this.isEmpty() || this.top == this.threshold-1) this.createNewStack(); 
 		( this.Stax.get(currentStack) )[++top] = newValue; 
 	}
@@ -42,7 +42,7 @@ class SetOfStacks {
 	 * If we removed the last plate form a pile, remove that pile. 
 	 * Reduces top. 
 	 */
-	int pop() throws EmptyStackException {
+	public int pop() throws EmptyStackException {
 		if (this.isEmpty() || this.top == -1) throw new EmptyStackException(); 
 		int returnValue = ( this.Stax.get(currentStack) )[top--]; 
 		if (this.top == -1) this.deleteLastStack(); 
@@ -78,7 +78,7 @@ class SetOfStacks {
 	 * 	return value is always threshold-1. 
 	 * 	Move over all elements after it. 
 	 */
-	int popAt(int index) throws EmptyStackException, IllegalArgumentException {
+	public int popAt(int index) throws EmptyStackException, IllegalArgumentException {
 		if (this.isEmpty() || this.top == -1) throw new EmptyStackException(); 
 		if (index > this.currentStack || index < 0) 
 			throw new IllegalArgumentException("Invalid value for index. Substacks (1st index: 0): " + 

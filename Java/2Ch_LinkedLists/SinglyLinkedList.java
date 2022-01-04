@@ -1,20 +1,20 @@
 
-class SinglyLinkedList {
-	Node Head;
+public class SinglyLinkedList {
+	public Node Head;
 
-	SinglyLinkedList() {
+	public SinglyLinkedList() {
 		this.Head = null; 
 	}
 
-	SinglyLinkedList(int firstData) {
+	public SinglyLinkedList(int firstData) {
 		this.Head = new Node(firstData); 
 	}
 
-	boolean isEmpty() {
+	public boolean isEmpty() {
 		return (this.Head == null); 
 	}
 
-	void add(int lastData) {
+	public void add(int lastData) {
 		if ( this.isEmpty() ) 
 			this.Head = new Node(lastData); 
 		else {
