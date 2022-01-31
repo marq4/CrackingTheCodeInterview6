@@ -6,7 +6,7 @@
  *   "abc" "cba" -> [0,1,2] [2,1,0]. 
  * We could get a "digest" of each big number by adding together all its digits, 
  *   then do the same for the other and finally substract the results: res1 - res2. 
- *   If that is 0 then both numbers must have been composed of the same digts. 
+ *   If that is 0 then both numbers must have been composed of the same digits. 
  * Instead we can also substract each pair of digits at the same position in each big number and add all up: 
  *   (0 - 2) + (1 - 1) + (2 - 0) = 0. 
  *   "da...e" "da...f" => (3 - 3) + (0 - 0) + ... + (4 - 5) = -1. 
