@@ -28,12 +28,6 @@ jobs:
 
       - name: Analyze code with pylint.
         run: |
-          pwd
-          echo '---'
-          ls -A
-          echo '---'
-          ls -A ..
-          echo '---'
           pylint \
           --rcfile=Python_Skeletons_and_Tests/.pylint_configuration/.pylintrc \
           $(git ls-files '*.py')
