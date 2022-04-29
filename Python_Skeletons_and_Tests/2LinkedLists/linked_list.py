@@ -1,6 +1,6 @@
 """
 From: GitHub/careercup/CtCI-6th-Edition-Python.
-Please first validate this file (in Win from Git Bash) do:
+Please first validate this file. In Win from Git Bash do:
     python -m pytest Tests/sanity_linked_list_tests_0.py
 """
 
