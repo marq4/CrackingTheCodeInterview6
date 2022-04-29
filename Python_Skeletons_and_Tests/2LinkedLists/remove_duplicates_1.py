@@ -2,7 +2,7 @@
 2.1: Remove duplicates from an unsorted linked list.
 TDD: it is recommended to run the tests before coding.
 To automatically test your code in Win from Git Bash do:
-    python -m pytest Tests/verify_duplicates_removed_tests_1.py -v
+    python -m pytest tests/verify_duplicates_removed_tests_1.py -v
 """
 
 from linked_list import LinkedList, generate_randint_linked_list
