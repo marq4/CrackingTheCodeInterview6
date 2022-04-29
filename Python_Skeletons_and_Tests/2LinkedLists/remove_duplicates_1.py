@@ -1,7 +1,7 @@
 """
 2.1: Remove duplicates from an unsorted linked list.
 TDD: it is recommended to run the tests before coding.
-To automatically test your code (in Win from Git Bash) do:
+To automatically test your code in Win from Git Bash do:
     python -m pytest Tests/verify_duplicates_removed_tests_1.py -v
 """
 
