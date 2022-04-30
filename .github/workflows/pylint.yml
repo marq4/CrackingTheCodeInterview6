@@ -1,4 +1,4 @@
-name: Verify code quality with pylint.
+name: Verify Python code quality with pylint.
 
 on:
   push:

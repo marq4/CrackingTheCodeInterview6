@@ -45,6 +45,7 @@ class LinkedList:
         return length
 
     def __eq__(self, other) -> bool:
+        """
         if other is None:
             return False
         if isinstance( other, type(self) ):
@@ -56,6 +57,10 @@ class LinkedList:
                 if self_node.value != other_node.value:
                     return False
             return True
+        return False
+        """
+        if other is None: # Break tests! 
+            return False
         return False
 
 
