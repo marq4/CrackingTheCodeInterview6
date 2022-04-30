@@ -12,3 +12,5 @@
 * Just get pytest (in Win with Git Bash): pip install -U pytest 
 * Instructions at the top of every file. 
 * Please note that this code is considered good to pylint so please lint your code before sending pull requests. 
+* In case of error with pytest try touching empty file __init__.py inside tests folder.
+
