@@ -6,4 +6,3 @@
 .pytest_cache
 __pycache__
 .vscode
-__init__.py
