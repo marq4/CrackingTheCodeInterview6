@@ -9,13 +9,12 @@ from linked_list import LinkedList, LinkedListNode, \
     generate_randint_linked_list
 
 
-# To test this one, change main and last line.
+# To test this one, change main function and last line.
 def reverse_iter(linked_list: LinkedList) -> None:
     """ TODO. """
-    if ( linked_list is None or linked_list.is_empty() ):
-        return linked_list
+    if ( linked_list is not None and not linked_list.is_empty() ):
+        pass
     # Implement your solution here.
-    return linked_list
 
 
 # If this function is renamed, also change last line.
