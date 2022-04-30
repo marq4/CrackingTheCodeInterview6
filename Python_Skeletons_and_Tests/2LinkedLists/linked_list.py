@@ -1,7 +1,7 @@
 """
 From: GitHub/careercup/CtCI-6th-Edition-Python.
 Please first validate this file. In Win from Git Bash do:
-    python -m pytest tests/sanity_linked_list_tests_0.py
+    python -m pytest tests/test_sanity_linked_list_0 -v
 """
 
 from random import randint

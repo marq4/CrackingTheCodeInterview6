@@ -25,8 +25,4 @@ jobs:
 
       - name: Validate LinkedList code.
         run: |
-          pwd
-          echo '---'
-          ls -A
-          echo '---'
-          pytest -v Python_Skeletons_and_Tests/2LinkedLists/tests/sanity_linked_list_tests_0.py
+          pytest
