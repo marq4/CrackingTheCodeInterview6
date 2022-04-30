@@ -53,4 +53,3 @@ def test_all_duplicates():
     remove_duplicates_function(all_ll)
     assert len(all_ll) == 1
     assert all_ll == LinkedList( [4] )
-

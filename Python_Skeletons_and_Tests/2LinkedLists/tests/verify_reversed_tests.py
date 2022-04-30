@@ -45,4 +45,3 @@ def test_advanced_multiple_elements():
     multi_ll = LinkedList( [0, 2, 0, 4, 5, 6, -1, 0] )
     reverse_function(multi_ll)
     assert multi_ll == LinkedList( [0, -1, 6, 5, 4, 0, 2, 0] )
-
