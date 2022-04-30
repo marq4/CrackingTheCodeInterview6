@@ -9,7 +9,7 @@ from linked_list import LinkedList, LinkedListNode, \
     generate_randint_linked_list
 
 
-# To test this one change main and last line.
+# To test this one, change main and last line.
 def reverse_iter(linked_list: LinkedList) -> None:
     """ TODO. """
     if ( linked_list is None or linked_list.is_empty() ):
