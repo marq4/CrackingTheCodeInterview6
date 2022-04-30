@@ -13,8 +13,8 @@ from linked_list import LinkedList, LinkedListNode, \
 def reverse_iter(linked_list: LinkedList) -> None:
     """ TODO. """
     if ( linked_list is not None and not linked_list.is_empty() ):
+        # Implement your solution here.
         pass
-    # Implement your solution here.
 
 
 # If this function is renamed, also change last line.

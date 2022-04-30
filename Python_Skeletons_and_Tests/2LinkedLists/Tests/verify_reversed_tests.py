@@ -10,6 +10,12 @@ def test_none():
     reverse_function(non_existing)
     assert non_existing is None
 
+def test_empty():
+    """ List is empty. """
+    empty_ll = LinkedList()
+    reverse_function(empty_ll)
+    assert empty_ll == LinkedList()
+
 def test_single():
     """ List has a single element. """
     single_ll = LinkedList( [56] )
