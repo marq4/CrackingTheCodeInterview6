@@ -13,7 +13,7 @@ def remove_duplicates(linked_list: LinkedList) -> None:
     """ TODO. """
     if ( linked_list is None or linked_list.is_empty() ):
         return
-    # Implement your solution here:
+    # Implement your solution here.
 
 
 def main():
