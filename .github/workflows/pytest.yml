@@ -24,7 +24,7 @@ jobs:
           pip install pytest
 
       - name: Validate LinkedList code.
-        run:
+        run: |
           pwd
           echo '---'
           ls -A
