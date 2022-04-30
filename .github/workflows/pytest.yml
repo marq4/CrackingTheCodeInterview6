@@ -1,6 +1,6 @@
 name: Sanity tests for LinkedList class.
 
-on: [push, pull-request] 
+on: [push, pull_request] 
 
 jobs:
   sanity-test:
