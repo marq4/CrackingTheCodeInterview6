@@ -5,15 +5,18 @@ on: [push, pull_request]
 jobs:
   sanity-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-versions: [ '3.10' ]
     timeout-minutes: 3
     steps:
       - name: Checkout code.
         uses: actions/checkout@v3
 
-      - name: Set up Python ${{ matrix.python-version }}.
+      - name: Set up Python ${{ matrix.python-versions }}.
         uses: actions/setup-python@v3
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ matrix.python-versions }}
       
       - name: Install dependencies.
         run: |
@@ -22,5 +25,4 @@ jobs:
 
       - name: Validate LinkedList code.
         run:
-          pytest -v \
-          Python_Skeletons_and_Tests/2LinkedLists/tests/sanity_linked_list_tests_0.py
+          pytest -v sanity_linked_list_tests_0.py
