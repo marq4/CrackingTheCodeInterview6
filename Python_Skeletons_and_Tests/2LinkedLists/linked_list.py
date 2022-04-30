@@ -59,7 +59,7 @@ class LinkedList:
             return True
         return False
         """
-        if other is None: # Break tests! 
+        if other is None: # Break tests!
             return False
         return False
 
