@@ -26,9 +26,9 @@ def generate_randint_matrix(num: int, \
     min_val -- cell lower bound inclusive.
     max_val -- cell upper bound inclusive.
     """
-    generated = [ \
-        [ randint(min_val, max_val) for _ in range(num) ] \
-        for _ in range(num) \
+    generated = [
+        [ randint(min_val, max_val) for _ in range(num) ]
+        for _ in range(num)
                 ]
     return generated
 
