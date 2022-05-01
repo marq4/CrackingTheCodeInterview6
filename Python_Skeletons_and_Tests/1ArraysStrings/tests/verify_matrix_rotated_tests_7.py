@@ -1,6 +1,34 @@
 """ Automatically validate your implementation. """
 
-from rotate_matrix_7 import rotate_matrix_function
+from rotate_matrix_7 import rotate_matrix_function, \
+    get_inc_matrix_pretty_print, generate_randint_matrix, \
+    generate_inc_matrix
+
+
+def test_sanity_generate_randint_matrix():
+    """ Randint matrix. """
+    dimensions = 2
+    lo_val = 5
+    hi_val = 7
+    rand_mx = generate_randint_matrix(dimensions, lo_val, hi_val)
+    assert rand_mx is not None
+    assert len(rand_mx) == dimensions
+    assert rand_mx[0][0] <= hi_val and rand_mx[0][0] >= lo_val
+
+def test_sanity_generate_inc_matrix():
+    """ Incremental matrix. """
+    dimensions = 3
+    inc_mx = generate_inc_matrix(dimensions)
+    assert inc_mx is not None
+    assert len(inc_mx[0]) == dimensions
+    assert inc_mx[0][0] == 1
+
+def test_sanity_get_inc_matrix_pretty_print():
+    """ Incremental matrix representation. """
+    expected = "1\t2\n3\t4"
+    actual = get_inc_matrix_pretty_print([[1, 2], [3, 4]])
+    assert actual is not None
+    assert expected == actual
 
 
 def test_none():

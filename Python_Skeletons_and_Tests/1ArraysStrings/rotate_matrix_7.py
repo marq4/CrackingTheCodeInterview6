@@ -3,7 +3,7 @@
     rotate by 90° in place.
 TDD: it is recommended to run the tests before coding.
 To automatically test your code in Win from Git Bash do:
-    python -m pytest tests/verify_matrix_rotated.py -v
+    python -m pytest tests/verify_matrix_rotated_tests_7.py -v
 """
 
 from typing import List
@@ -32,8 +32,23 @@ def generate_randint_matrix(num: int, \
                 ]
     return generated
 
+def generate_inc_matrix(dimensions: int) \
+    -> List[ List[int] ]:
+    """ Return a dimensions x dimensions
+        int matrix with incremental values per cell. """
+    return [ [ ( (w+1) + dimensions*q ) \
+        for w in range(dimensions) ] \
+        for q in range(dimensions) ]
+
+def get_inc_matrix_pretty_print(matrix: \
+    List[ List[int] ]) -> str:
+    """ Return comprehensive represention of 2D matrix. """
+    return ( "\n".join( [
+        "\t".join( [str(cell) for cell in row] )
+        for row in matrix] ) )
+
 def display_matrix(display_me: List[ List[int] ]) -> None:
-    """ Comprehensive pretty print of 2D matrix. """
+    """ Simply print each row of 2D matrix. """
     for row in display_me:
         print(row)
 
@@ -41,11 +56,20 @@ def display_matrix(display_me: List[ List[int] ]) -> None:
 def main():
     """ Generate some random numbers and
         visually verify solution. """
-    example_mx = generate_randint_matrix(4, 0, 9)
-    display_matrix(example_mx)
-    rotate_matrix(example_mx)
+    rand_mx = generate_randint_matrix(3, 0, 9)
+    print()
+    print("Randint matrix: ")
+    display_matrix(rand_mx)
+    rotate_matrix(rand_mx)
     print("\n After rotating 90 degrees: ")
-    display_matrix(example_mx)
+    display_matrix(rand_mx)
+    print("\n")
+    print("Incremental matrix: ")
+    incremental_matrix = generate_inc_matrix(5)
+    print( get_inc_matrix_pretty_print(incremental_matrix) )
+    rotate_matrix(incremental_matrix)
+    print("\n After rotating 90 degrees: ")
+    print( get_inc_matrix_pretty_print(incremental_matrix) )
 
 # Simple visual test:
 if __name__ == "__main__":
