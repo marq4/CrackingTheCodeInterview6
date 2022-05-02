@@ -28,7 +28,7 @@ jobs:
 
       - name: Analyze code with pylint.
         run: |
-          echo 'Files to be linted:'
+          echo 'Files to be linted: '
           echo $(git ls-files '*.py')
           pylint -v \
           --rcfile=Python_Skeletons_and_Tests/.pylint_configuration/.pylintrc \

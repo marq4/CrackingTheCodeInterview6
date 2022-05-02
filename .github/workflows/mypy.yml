@@ -25,4 +25,6 @@ jobs:
 
       - name: Validate function returns and args.
         run: |
-          mypy
+          echo 'Files to be type-checked: '
+          echo $(git ls-files '*.py')
+          mypy $(git ls-files '*.py')
