@@ -27,4 +27,5 @@ jobs:
         run: |
           echo 'Files to be type-checked: '
           echo $(git ls-files '*.py')
-          mypy $(git ls-files '*.py')
+          mypy --exclude '__init__.py' \
+          $(git ls-files '*.py')
