@@ -25,7 +25,5 @@ jobs:
 
       - name: Validate function returns and args.
         run: |
-          echo 'Files to be type-checked: '
-          echo $(git ls-files '*.py')
-          mypy --exclude '__init__.py' \
-          $(git ls-files '*.py')
+          mypy \
+          Python_Skeletons_and_Tests/1ArraysStrings/rotate_matrix_7.py
