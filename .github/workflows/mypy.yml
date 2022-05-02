@@ -25,5 +25,8 @@ jobs:
 
       - name: Validate function returns and args.
         run: |
-          mypy \
+          mypy
           Python_Skeletons_and_Tests/1ArraysStrings/rotate_matrix_7.py
+          Python_Skeletons_and_Tests/2LinkedLists/linked_list.py
+          Python_Skeletons_and_Tests/2LinkedLists/remove_duplicates_1.py
+          Python_Skeletons_and_Tests/2LinkedLists/reverse.py

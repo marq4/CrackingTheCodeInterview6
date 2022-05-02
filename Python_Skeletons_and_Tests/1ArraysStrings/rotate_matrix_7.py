@@ -78,8 +78,3 @@ if __name__ == "__main__":
 
 # For pytest. Also rename here:     VVVVVVVVVVV
 rotate_matrix_function =            rotate_matrix
-
-
-def wrong_return(number: int) -> list:
-    """ Should make mypy fail. """
-    return number is not None
