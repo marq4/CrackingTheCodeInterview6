@@ -15,7 +15,7 @@ def invert(binary_tree: BinaryTree) -> None:
     if binary_tree is not None and binary_tree:
         recursive_invert(binary_tree.root)
 
-def recursive_invert(root: BinaryTreeNode):
+def recursive_invert(root: BinaryTreeNode) -> None:
     """ Inverts in place. """
     # Implement your solution here.
     root.value = root.value

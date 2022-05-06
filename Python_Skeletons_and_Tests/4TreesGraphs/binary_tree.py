@@ -36,6 +36,9 @@ class BinaryTreeNode:
             result += len(self.rite)
         return result
 
+    def __str__(self):
+        return f"({self.value})"
+
 
     def contains(self, search_val: int) -> bool:
         """ Recursively search. """

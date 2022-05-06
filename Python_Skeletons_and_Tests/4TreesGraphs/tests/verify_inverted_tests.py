@@ -51,4 +51,6 @@ def test_advanced():
     expected_bt.root.left.left = BinaryTreeNode(166)
     expected_bt.root.left.left.rite = BinaryTreeNode(158)
     expected_bt.root.left.rite = BinaryTreeNode(105)
+    assert binary_trees_are_identical(advanced_bt, expected_bt) is False
+    invert_function(expected_bt)
     assert binary_trees_are_identical(advanced_bt, expected_bt)
