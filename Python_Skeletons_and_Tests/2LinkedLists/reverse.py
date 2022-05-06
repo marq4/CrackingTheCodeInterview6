@@ -23,15 +23,15 @@ def reverse(linked_list: LinkedList) -> None:
     if linked_list is not None:
         linked_list.head = recursive_reverse(linked_list.head)
 
-
 def recursive_reverse(head: LinkedListNode) -> LinkedListNode:
     """ Returns new head. """
     # Implement your solution here.
     return head
 
+
 def main():
     """ Generate some random numbers and
-        visually verify solution. """
+    visually verify solution. """
     numbers_ll = generate_randint_linked_list(4, 0, 22)
     print(numbers_ll)
     reverse(numbers_ll)

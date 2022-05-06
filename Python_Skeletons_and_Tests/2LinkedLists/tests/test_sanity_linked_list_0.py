@@ -1,15 +1,16 @@
 """ Verify linked list class works with ints. """
 
-from linked_list import LinkedList, generate_randint_linked_list
+from linked_list import (LinkedList, generate_randint_linked_list,
+                         linked_lists_are_identical)
 
 
-def test_init_():
-    """ Empty. Also _len_ and is_empty. """
+def test_init_len_():
+    """ Empty. """
     empty_ll = LinkedList()
     assert empty_ll.head is None
     assert empty_ll.tail is None
     assert len(empty_ll) == 0
-    assert empty_ll.is_empty()
+    assert bool(empty_ll) is False
 
 def test_single():
     """ Single element. """
@@ -27,43 +28,10 @@ def test_multi():
     assert len(multi_ll) == val
     assert multi_ll.tail.value == val
 
-def test_generate_randint_linked_list():
-    """ Multiple random elements. """
-    val = 6
-    lo_val = 0
-    hi_val = 99
-    multi_rand_ll = \
-        generate_randint_linked_list(val, lo_val, hi_val)
-    assert len(multi_rand_ll) == val
-    assert multi_rand_ll.head.value >= lo_val
-    assert multi_rand_ll.tail.value <= hi_val
-    single_ll = \
-        generate_randint_linked_list(1, lo_val, hi_val)
-    assert single_ll.is_empty() is False
-    assert len(single_ll) == 1
-
 def test_str_():
     """ Representation. """
     zeros_ll = LinkedList( [0, 0, 0] )
     assert str(zeros_ll) == '0 -> 0 -> 0'
-
-def test_eq_():
-    """ Equality. """
-    compare_ll = LinkedList( [44, 42, 43, -10] )
-    other_none = None
-    assert compare_ll != other_none
-    not_instance = "NoLL"
-    assert compare_ll != not_instance
-    empty_ll = LinkedList()
-    assert compare_ll != empty_ll
-    both_empty_ll = LinkedList()
-    assert empty_ll == both_empty_ll
-    dif_len_ll = LinkedList( [-39] )
-    assert compare_ll != dif_len_ll
-    dif_elements_same_len_ll = LinkedList( [44, 42, 43, -11] )
-    assert compare_ll != dif_elements_same_len_ll
-    same_ll = LinkedList( [44, 42, 43, -10] )
-    assert compare_ll == same_ll
 
 def test_add():
     """ Add single element. """
@@ -75,7 +43,7 @@ def test_add():
     single_ll = LinkedList()
     single_ll.add(10)
     assert single_ll.head.value == single_ll.tail.value == 10
-    assert single_ll.is_empty() is False
+    assert bool(single_ll) is True
     assert len(single_ll) == 1
 
 def test_add_to_beginning():
@@ -88,14 +56,14 @@ def test_add_to_beginning():
     single_ll = LinkedList()
     single_ll.add_to_beginning(88)
     assert single_ll.head.value == single_ll.tail.value == 88
-    assert single_ll.is_empty() is False
+    assert bool(single_ll) is True
     assert len(single_ll) == 1
 
 def test_add_multiple():
     """ Add list. """
     multi_ll = LinkedList()
     multi_ll.add_multiple( [6, 7, 8] )
-    assert multi_ll.is_empty() is False
+    assert bool(multi_ll) is True
     assert len(multi_ll) == 3
     multi_ll.add_multiple( [11, 12, 13] )
     assert len(multi_ll) == 6
@@ -103,4 +71,48 @@ def test_add_multiple():
     assert len(multi_ll) == 7
     assert multi_ll.head.value == 6
     assert multi_ll.tail.value == 0
-    assert multi_ll == LinkedList( [6, 7, 8, 11, 12, 13, 0] )
+    assert linked_lists_are_identical( multi_ll, \
+        LinkedList( [6, 7, 8, 11, 12, 13, 0] ) )
+
+def test_generate_randint_linked_list():
+    """ Multiple random elements. """
+    val = 6
+    lo_val = 0
+    hi_val = 99
+    multi_rand_ll = generate_randint_linked_list(val, lo_val, hi_val)
+    assert len(multi_rand_ll) == val
+    assert multi_rand_ll.head.value >= lo_val
+    assert multi_rand_ll.tail.value <= hi_val
+    single_ll = generate_randint_linked_list(1, lo_val, hi_val)
+    assert bool(single_ll) is True
+    assert len(single_ll) == 1
+
+def test_linked_lists_are_identical():
+    """ Identical if both contain same elements in same order. """
+    none = None
+    assert linked_lists_are_identical(none, None) is False
+    empty_ll = LinkedList()
+    assert linked_lists_are_identical(empty_ll, none) is False
+    assert linked_lists_are_identical( empty_ll, LinkedList() )
+    val = -7
+    single_ll = LinkedList( [val] )
+    assert linked_lists_are_identical(single_ll, single_ll)
+    assert linked_lists_are_identical( single_ll, LinkedList( [val] ) )
+    same_ll = LinkedList()
+    same_ll.add(val)
+    assert linked_lists_are_identical(single_ll, same_ll)
+    multi_ll = LinkedList( list( range(1, 5) ) )
+    assert linked_lists_are_identical(multi_ll, single_ll) is False
+    assert linked_lists_are_identical(multi_ll, \
+        LinkedList( list( range(1, 5) ) ) )
+    assert linked_lists_are_identical(multi_ll, none) is False
+    first_element_ll = LinkedList( [1] )
+    print(f"MULTI={multi_ll},FIRST={first_element_ll}")#TMP
+    assert linked_lists_are_identical(multi_ll, first_element_ll) is False
+    less_elements_ll = LinkedList( list( range(1, 4) ) )
+    assert linked_lists_are_identical(multi_ll, less_elements_ll) is False
+    more_elements_ll = LinkedList( list( range(1, 6) ) )
+    assert linked_lists_are_identical(multi_ll, more_elements_ll) is False
+    different_order_ll = LinkedList( [56, 57, 58] )
+    compare_ll = LinkedList( [56, 58, 57] )
+    assert linked_lists_are_identical(different_order_ll, compare_ll) is False
