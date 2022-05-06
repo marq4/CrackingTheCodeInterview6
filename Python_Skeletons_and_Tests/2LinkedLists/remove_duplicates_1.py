@@ -11,7 +11,7 @@ from linked_list import LinkedList, generate_randint_linked_list
 # If this function is renamed, also change last line.
 def remove_duplicates(linked_list: LinkedList) -> None:
     """ TODO. """
-    if ( linked_list is None or linked_list.is_empty() ):
+    if linked_list:
         return
     # Implement your solution here.
 
