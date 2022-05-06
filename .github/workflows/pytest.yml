@@ -1,4 +1,4 @@
-name: Sanity tests for LinkedList class.
+name: Sanity tests for LinkedList, BinaryTree classes.
 
 on: [push, pull_request] 
 
@@ -26,3 +26,4 @@ jobs:
       - name: Validate LinkedList, BinaryTree code.
         run: |
           pytest Python_Skeletons_and_Tests/2LinkedLists/tests/test_sanity_linked_list_0.py
+          pytest Python_Skeletons_and_Tests/4TreesGraphs/test_sanity_binary_tree_0.py
