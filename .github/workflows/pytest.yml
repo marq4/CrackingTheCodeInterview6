@@ -25,4 +25,4 @@ jobs:
 
       - name: Validate LinkedList, BinaryTree code.
         run: |
-          pytest
+          pytest Python_Skeletons_and_Tests/2LinkedLists/tests/test_sanity_linked_list_0.py
