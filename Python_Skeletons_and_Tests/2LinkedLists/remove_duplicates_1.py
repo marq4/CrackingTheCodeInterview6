@@ -14,6 +14,7 @@ def remove_duplicates(linked_list: LinkedList) -> None:
     if linked_list:
         return
     # Implement your solution here.
+    # Automatic tests will fail if order of elements changes.
 
 
 def main():
