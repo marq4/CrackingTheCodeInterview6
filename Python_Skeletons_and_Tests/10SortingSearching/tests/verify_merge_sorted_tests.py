@@ -52,7 +52,7 @@ def test_random_numbers():
     minimum_value = -9999
     random_arr = []
     for _ in range(133):
-        random_arr.append( randint(minimum_value, 9999) )
+        random_arr.append( randint(minimum_value, minimum_value*-1) )
     merge_sort_function(random_arr)
     for number in random_arr:
         assert number >= minimum_value
