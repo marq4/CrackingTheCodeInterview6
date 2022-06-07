@@ -12,10 +12,16 @@ from binary_search import is_sorted
 
 # If this function is renamed, also change last line.
 def quick_sort(array: list) -> None:
+    """ Call internal recursive function with 0, length of array -1. """
+    if array:
+        recurs(array, 0, len(array)-1)
+
+def recurs(arr: list, low: int, high: int) -> None:
     """ TODO. """
     # Implement your solution here.
-    if array:
-        return
+    if arr:
+        low = high
+        high = low
 
 
 def main():
