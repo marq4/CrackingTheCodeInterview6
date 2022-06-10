@@ -6,7 +6,7 @@ To automatically test your code in Win from Git Bash do:
     python -m pytest tests/verify_sorted_tests.py -v
 """
 
-from example_sort import simple_test_visual
+from sort_example import simple_test_visual
 
 
 # If this function is renamed, also change last line.

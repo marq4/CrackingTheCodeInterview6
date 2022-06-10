@@ -14,5 +14,5 @@ def simple_test_visual(sort_function):
         numbers_array.append( randint(0, 99) )
     print(numbers_array)
     sort_function(numbers_array)
-    print(f" After merge sort:\n{numbers_array}")
+    print(f" After sorting with {sort_function}:\n{numbers_array}")
     assert is_sorted(numbers_array)
