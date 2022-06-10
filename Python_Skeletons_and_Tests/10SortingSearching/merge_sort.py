@@ -6,9 +6,7 @@ To automatically test your code in Win from Git Bash do:
     python -m pytest tests/verify_sorted_tests.py -v
 """
 
-from random import randint
-
-from binary_search import is_sorted
+from example_sort import simple_test_visual
 
 
 # If this function is renamed, also change last line.
@@ -19,20 +17,8 @@ def merge_sort(array: list) -> None:
         return
 
 
-def main():
-    """ Generate some random numbers and
-        visually verify solution. """
-    numbers_array = []
-    for _ in range(10):
-        numbers_array.append( randint(0, 99) )
-    print(numbers_array)
-    merge_sort(numbers_array)
-    print(f" After merge sort:\n{numbers_array}")
-    assert is_sorted(numbers_array)
-
-# Simple visual test:
 if __name__ == "__main__":
-    main()
+    simple_test_visual(merge_sort)
 
 
 # For pytest. Also rename here:     VVVVVVVVVVV
