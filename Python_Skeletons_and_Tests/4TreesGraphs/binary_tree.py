@@ -1,5 +1,7 @@
 """
 Unique Unbalanced Binary Tree (int).
+Please verify the binary tree works as expected after cloning:
+    python -m pytest tests/test_sanity_binary_tree_0.py -v
 """
 
 from enum import Enum

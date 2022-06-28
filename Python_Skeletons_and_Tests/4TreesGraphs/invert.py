@@ -2,7 +2,7 @@
 Invert a binary tree.
 TDD: it is recommended to run the tests before coding.
 To automatically test your code in Win from Git Bash do:
-    python -m pytest tests/test_sanity_binary_tree_0.py -v
+    python -m pytest tests/verify_inverted_tests.py -v
 """
 
 from binary_tree import (BinaryTree, BinaryTreeNode,
